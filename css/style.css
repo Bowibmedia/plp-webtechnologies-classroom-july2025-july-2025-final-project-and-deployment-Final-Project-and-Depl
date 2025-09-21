@@ -545,6 +545,13 @@ footer {
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 12px;
+    top: 14px;
+    padding: 6px 8px;
+    font-size: 1.6rem;
   }
 }
 

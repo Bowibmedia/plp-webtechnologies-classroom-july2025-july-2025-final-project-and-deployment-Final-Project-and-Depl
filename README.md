@@ -67,7 +67,7 @@ Inside `html/`:
 ## Deployment
 
 - GitHub Pages: push to GitHub and configure Pages. Use the `html/` folder as the site root if needed.
-
+link to website   https://regibugloballogistics.netlify.app/
 
 ## Accessibility & responsiveness
 

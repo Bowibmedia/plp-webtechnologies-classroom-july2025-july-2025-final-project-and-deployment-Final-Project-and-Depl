@@ -106,3 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Mobile nav toggle (hamburger)
+document.addEventListener('DOMContentLoaded', () => {
+  const toggles = Array.from(document.querySelectorAll('.nav-toggle'));
+  toggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const nav = document.querySelector('.nav-links');
+      if (!nav) return;
+      const isShown = nav.classList.toggle('show');
+      btn.setAttribute('aria-expanded', String(isShown));
+    });
+  });
+});
