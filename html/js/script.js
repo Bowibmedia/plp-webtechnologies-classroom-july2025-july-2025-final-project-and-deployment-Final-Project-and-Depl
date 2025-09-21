@@ -83,3 +83,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("Counter initialization complete.");
 });
+
+// FAQ accordion handling
+document.addEventListener('DOMContentLoaded', () => {
+  const faqButtons = Array.from(document.querySelectorAll('.faq-question'));
+  if (!faqButtons.length) return;
+
+  faqButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      // collapse all items (optional: allow multiple open by removing the next block)
+      faqButtons.forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        const answer = b.nextElementSibling;
+        if (answer && answer.classList.contains('faq-answer')) answer.hidden = true;
+      });
+
+      // toggle current
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const answer = btn.nextElementSibling;
+      if (answer && answer.classList.contains('faq-answer')) answer.hidden = expanded;
+    });
+  });
+});
